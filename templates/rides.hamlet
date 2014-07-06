@@ -1,0 +1,23 @@
+<h1>Alon Shevut Tremp-Board (Beta)
+  
+<form .form-inline role=form method=post enctype=#{enctype} #rides-form>
+    ^{widget}
+    <div>
+        <input type=submit value="Post Ride">
+$if null rides
+    <p>No rides
+$else
+    <table #ridesTable>
+      <tr>
+        <th>Name
+        <th>Destination
+        <th>Time Leaving
+        <th>Phone
+        <th>Spots
+        $forall Entity _ ride <- rides
+            <tr>
+                <td> #{ridesName ride}
+                <td> #{ridesDest ride}
+                <td> #{ridesLeaving ride}
+                <td> #{ridesNumber ride}
+                <td> #{ridesSpots ride}
